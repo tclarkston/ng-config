@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Config } from '../models/config.model';
 
@@ -10,7 +9,7 @@ export class ConfigService {
 
   constructor() {}
 
-  async getConfig() {
+  async getConfig(): Promise<Config> {
     const config = await fetch(this.configUrl);
 
     return await config.json();
